@@ -1,0 +1,35 @@
+
+<head>
+    <title>Binary Shifting Demo</title>
+    <script>
+        function performShift() {
+            var inputNumber = parseInt(document.getElementById('inputNumber').value);
+            var shiftAmount = parseInt(document.getElementById('shiftAmount').value);
+            var shiftDirection = document.querySelector('input[name="shiftDirection"]:checked').value;
+
+            var result;
+            if (shiftDirection === 'left') {
+                result = inputNumber << shiftAmount;
+            } else {
+                result = inputNumber >> shiftAmount;
+            }
+
+            document.getElementById('result').innerText = 'Result: ' + result.toString(2);
+        }
+    </script>
+</head>
+<body>
+    <h2>Binary Shifting Demo</h2>
+    <p>Enter a number and select shift direction and amount:</p>
+    <input type="number" id="inputNumber" placeholder="Enter a number" />
+    <input type="number" id="shiftAmount" placeholder="Shift amount" />
+    <div>
+        <input type="radio" id="leftShift" name="shiftDirection" value="left" checked>
+        <label for="leftShift">Left Shift</label>
+        <input type="radio" id="rightShift" name="shiftDirection" value="right">
+        <label for="rightShift">Right Shift</label>
+    </div>
+    <button onclick="performShift()">Shift</button>
+    <p id="result"></p>
+</body>
+</html>
