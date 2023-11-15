@@ -42,7 +42,7 @@ courses: { csse: {week: 1}, csp: {week: 1, categories: [4.A]}, csa: {week: 0} }
     </script>
 </head>
 <body>
-    <h2>Binary Shifting Demo</h2>
+    <h2>Biary Shifting Demo</h2>
     <p>This demo shows how binary shifting works. Enter a number, choose a shift direction, and see the result.</p>
     
     <!-- User input for the number to shift -->
