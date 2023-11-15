@@ -1,35 +1,55 @@
 
+<html>
 <head>
     <title>Binary Shifting Demo</title>
     <script>
+        // JavaScript function to perform binary shifting
         function performShift() {
+            // Read input values from the form
             var inputNumber = parseInt(document.getElementById('inputNumber').value);
             var shiftAmount = parseInt(document.getElementById('shiftAmount').value);
             var shiftDirection = document.querySelector('input[name="shiftDirection"]:checked').value;
 
             var result;
+            // Perform the shifting operation
             if (shiftDirection === 'left') {
                 result = inputNumber << shiftAmount;
             } else {
                 result = inputNumber >> shiftAmount;
             }
 
+            // Display the result
             document.getElementById('result').innerText = 'Result: ' + result.toString(2);
         }
     </script>
 </head>
 <body>
     <h2>Binary Shifting Demo</h2>
-    <p>Enter a number and select shift direction and amount:</p>
+    <p>This demo shows how binary shifting works. Enter a number, choose a shift direction, and see the result.</p>
+    
+    <!-- User input for the number to shift -->
+    <label for="inputNumber">Enter a number to shift:</label>
     <input type="number" id="inputNumber" placeholder="Enter a number" />
+    
+    <!-- User input for the shift amount -->
+    <label for="shiftAmount">Enter shift amount:</label>
     <input type="number" id="shiftAmount" placeholder="Shift amount" />
+
+    <p>Select the direction of the shift:</p>
     <div>
+        <!-- Option to choose left shift -->
         <input type="radio" id="leftShift" name="shiftDirection" value="left" checked>
-        <label for="leftShift">Left Shift</label>
+        <label for="leftShift">Left Shift (<<)</label>
+
+        <!-- Option to choose right shift -->
         <input type="radio" id="rightShift" name="shiftDirection" value="right">
-        <label for="rightShift">Right Shift</label>
+        <label for="rightShift">Right Shift (>>)</label>
     </div>
+    
+    <!-- Button to perform the shift -->
     <button onclick="performShift()">Shift</button>
+
+    <!-- Display the result of the shift -->
     <p id="result"></p>
 </body>
 </html>
