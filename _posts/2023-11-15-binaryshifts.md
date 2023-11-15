@@ -1,14 +1,11 @@
 ---
 toc: true
 comments: true
-layout: notebook  # Assuming 'post' is a valid layout in your setup.
+layout:   
 title: Binary Shifting Demo
 description: This demo shows how binary shifting works. Enter a number, choose a shift direction, and see the result.
 type: hacks
-courses: 
-  csse: {week: 1}
-  csp: {week: 1, categories: [4.A]}
-  csa: {week: 0}
+courses: { csse: {week: 1}, csp: {week: 1, categories: [4.A]}, csa: {week: 0} }
 ---
 
 <html>
