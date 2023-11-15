@@ -1,7 +1,7 @@
 ---
 toc: true
 comments: true
-layout:   
+layout: plans
 title: Binary Shifting Demo
 description: This demo shows how binary shifting works. Enter a number, choose a shift direction, and see the result.
 type: hacks

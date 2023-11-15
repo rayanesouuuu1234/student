@@ -9,7 +9,6 @@ courses: { csse: {week: 1}, csp: {week: 1, categories: [4.A]}, csa: {week: 0} }
 ---
 <!-- color_wheel.html -->
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
