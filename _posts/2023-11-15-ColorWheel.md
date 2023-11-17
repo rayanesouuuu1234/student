@@ -7,7 +7,6 @@ description: Color wheel that takes user binary input and displays a color
 type: hacks
 courses: { csse: {week: 1}, csp: {week: 1, categories: [4.A]}, csa: {week: 0} }
 ---
-<!-- color_wheel.html -->
 
 <html lang="en">
 <head>
@@ -15,27 +14,69 @@ courses: { csse: {week: 1}, csp: {week: 1, categories: [4.A]}, csa: {week: 0} }
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binary Color Wheel</title>
     <style>
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #495057;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
         #colorDisplay {
             width: 100px;
             height: 100px;
-            border: 1px solid #000;
+            border: 1px solid #343a40;
+            margin: 10px auto;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
     <label for="redBinary">Red (8-bit binary):</label>
     <input type="text" id="redBinary" maxlength="8" pattern="[01]{8}" required>
-    <br>
+    
     <label for="greenBinary">Green (8-bit binary):</label>
     <input type="text" id="greenBinary" maxlength="8" pattern="[01]{8}" required>
-    <br>
+    
     <label for="blueBinary">Blue (8-bit binary):</label>
     <input type="text" id="blueBinary" maxlength="8" pattern="[01]{8}" required>
-    <br>
+    
     <label for="colorPicker">Choose a color:</label>
     <input type="color" id="colorPicker" value="#000000">
+    
     <br>
+    
     <button onclick="displayColor()">Display Color</button>
+    
     <div id="colorDisplay"></div>
 
     <script>
