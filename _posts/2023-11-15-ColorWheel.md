@@ -7,7 +7,7 @@ description: Color wheel that takes user binary input and displays a color
 type: hacks
 courses: { csse: {week: 1}, csp: {week: 1, categories: [4.A]}, csa: {week: 0} }
 ---
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
