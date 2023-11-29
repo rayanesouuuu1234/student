@@ -11,65 +11,70 @@ categories: [C4.1]
 <html>
 <head>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-        .form-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            margin: auto;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input[type='number'], input[type='radio'], button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        button {
-            background-color: #0056b3;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #004494;
-        }
-        .radio-group {
-            display: flex;
-            justify-content: start;
-        }
-        .radio-group label {
-            margin: 0 10px 0 0;
-            display: flex;
-            align-items: center;
-        }
-        .radio-group input {
-            width: auto;
-            margin-right: 5px;
-        }
-        #result {
-            margin-top: 20px;
-            font-weight: bold;
-            color: #0056b3;
-        }
-    </style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #000; /* Changed to black */
+        color: #fff; /* Changed to white */
+        margin: 0;
+        padding: 20px;
+    }
+    .form-container {
+        background-color: #add8e6; /* Light blue background */
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #fff; /* White border for contrast */
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Adjusted box-shadow for better visibility */
+        max-width: 400px;
+        margin: auto;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #000; /* Changed to black for visibility */
+    }
+    input[type='number'], input[type='radio'], button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: #fff; /* Ensure input fields are white */
+        color: #000; /* Input text color to black for visibility */
+    }
+    button {
+        background-color: #0056b3;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #004494;
+    }
+    .radio-group {
+        display: flex;
+        justify-content: start;
+    }
+    .radio-group label {
+        margin: 0 10px 0 0;
+        display: flex;
+        align-items: center;
+        color: #000; /* Changed to black for visibility */
+    }
+    .radio-group input {
+        width: auto;
+        margin-right: 5px;
+    }
+    #result {
+        margin-top: 20px;
+        font-weight: bold;
+        color: #0056b3;
+    }
+</style>
 </head>
 <body>
 
@@ -108,7 +113,7 @@ categories: [C4.1]
 </div>
 
 <script>
-    // JavaScript function that performs the shift operation
+        // JS function that performs the shift
     function performShift() {
         // Retrieve the entered number from the input field
         var number = document.getElementById('inputNumber').value;
@@ -118,7 +123,7 @@ categories: [C4.1]
         var direction = document.querySelector('input[name="shiftDirection"]:checked').value;
         // Initialize the result variable
         var result = 0;
-        // Perform the shift operation based on the selected direction
+        // Perform the shift opperation based on the indicated direction
         if (direction === 'left') {
             result = number << shift; // Left shift operation
         } else {
