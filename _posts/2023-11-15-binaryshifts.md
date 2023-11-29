@@ -10,20 +10,20 @@ categories: [C4.1]
 
 <html>
 <head>
-    <style>
+<style>
     body {
         font-family: 'Arial', sans-serif;
-        background-color: #000; /* Changed to black */
-        color: #fff; /* Changed to white */
+        background-color: #121212; /* Dark gray for less harsh contrast */
+        color: #e0e0e0; /* Soft white for text */
         margin: 0;
         padding: 20px;
     }
     .form-container {
-        background-color: #add8e6; /* Light blue background */
+        background-color: #1e1e1e; /* Slightly lighter shade of dark gray */
         padding: 20px;
         border-radius: 8px;
-        border: 1px solid #fff; /* White border for contrast */
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Adjusted box-shadow for better visibility */
+        border: 1px solid #2a2a2a; /* Border color that stands out slightly */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
         max-width: 400px;
         margin: auto;
     }
@@ -34,26 +34,26 @@ categories: [C4.1]
         display: block;
         margin-bottom: 5px;
         font-weight: bold;
-        color: #000; /* Changed to black for visibility */
+        color: #e0e0e0; /* Soft white for labels */
     }
     input[type='number'], input[type='radio'], button {
         width: 100%;
         padding: 10px;
         margin-top: 5px;
-        border: 1px solid #ddd;
+        border: 1px solid #333; /* Dark border for input fields */
         border-radius: 4px;
         box-sizing: border-box;
-        background-color: #fff; /* Ensure input fields are white */
-        color: #000; /* Input text color to black for visibility */
+        background-color: #262626; /* Dark input fields for contrast */
+        color: #e0e0e0; /* Text color for input */
     }
     button {
-        background-color: #0056b3;
-        color: white;
+        background-color: #3264a8; /* Less intense blue for the button */
+        color: #ffffff;
         border: none;
         cursor: pointer;
     }
     button:hover {
-        background-color: #004494;
+        background-color: #2c4a8a; /* Darker blue on hover for interaction feedback */
     }
     .radio-group {
         display: flex;
@@ -63,7 +63,7 @@ categories: [C4.1]
         margin: 0 10px 0 0;
         display: flex;
         align-items: center;
-        color: #000; /* Changed to black for visibility */
+        color: #e0e0e0; /* Soft white for radio labels */
     }
     .radio-group input {
         width: auto;
@@ -72,7 +72,7 @@ categories: [C4.1]
     #result {
         margin-top: 20px;
         font-weight: bold;
-        color: #0056b3;
+        color: #4fc3f7; /* Lighter, more vibrant blue for results */
     }
 </style>
 </head>
