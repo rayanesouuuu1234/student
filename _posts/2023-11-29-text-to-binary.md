@@ -48,6 +48,12 @@ courses: { csse: {week: 1}, csp: {week: 1, categories: [4.A]}, csa: {week: 0} }
     } else {
       alert(`Sorry, that's incorrect. The correct decimal equivalent of ${randomBinary} is ${decimalEquivalent}.`);
     }
+    const playAgain = confirm("Do you want to play again?");
+    if (playAgain) {
+      playGame(); // Restart the game
+    } else {
+      alert("Thanks for playing! Goodbye.");
+    }
   }
 
   // Start the game
