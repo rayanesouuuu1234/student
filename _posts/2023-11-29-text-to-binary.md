@@ -2,8 +2,8 @@
 toc: true
 comments: true
 layout: 
-title: Binary guessing game
-description: The player has to guess a random binary number made by the computer.
+title: Binary Quiz
+description: Program that quizzes users on binary and keeps track of theit score.
 type: hacks
 courses: { csse: {week: 1}, csp: {week: 1, categories: [4.A]}, csa: {week: 0} }
 ---
@@ -11,54 +11,106 @@ courses: { csse: {week: 1}, csp: {week: 1, categories: [4.A]}, csa: {week: 0} }
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Binary Guessing Game</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    #quiz-container {
+      text-align: center;
+    }
+
+    #question {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    #input {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    #result {
+      font-size: 18px;
+      color: green;
+    }
+
+    #score {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    #check-answer-btn {
+      font-size: 16px;
+      padding: 10px;
+      cursor: pointer;
+    }
+  </style>
+  <title>Binary Quiz</title>
 </head>
 <body>
+  <div id="quiz-container">
+    <div id="question"></div>
+    <input type="text" id="input" placeholder="Enter your answer">
+    <div id="result"></div>
+    <div id="score"></div>
+    <button id="check-answer-btn" onclick="checkAnswer()">Check Answer & Next Question</button>
+  </div>
 
-<script>
-  // Function to generate a random binary number
-  function generateRandomBinary() {
-    let binaryNumber = '';
-    for (let i = 0; i < 4; i++) {
-      binaryNumber += Math.round(Math.random());
-    }
-    return binaryNumber;
-  }
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const quizContainer = document.getElementById('quiz-container');
+      const questionElement = document.getElementById('question');
+      const inputElement = document.getElementById('input');
+      const resultElement = document.getElementById('result');
+      const scoreElement = document.getElementById('score');
+      const checkAnswerBtn = document.getElementById('check-answer-btn');
+      let totalQuestions = 0;
+      let correctAnswers = 0;
 
-  // Function to convert binary to decimal
-  function binaryToDecimal(binary) {
-    return parseInt(binary, 2);
-  }
+      function generateRandomBinary() {
+        const binaryValue = Math.floor(Math.random() * 256).toString(2);
+        return binaryValue.padStart(8, '0');
+      }
 
-  // Main game function
-  function playGame() {
-    // Generate a random binary number
-    const randomBinary = generateRandomBinary();
+      function generateQuestion() {
+        const binaryNumber = generateRandomBinary();
+        questionElement.textContent = `Convert ${binaryNumber} to decimal`;
+        inputElement.value = '';
+        resultElement.textContent = '';
+        updateScore(); // Display the current score
+      }
 
-    // Ask the player to guess the decimal equivalent
-    const playerGuess = prompt(`Guess the decimal equivalent of ${randomBinary}:`);
+      window.checkAnswer = function () {
+        const binaryNumber = questionElement.textContent.split('Convert ')[1].split(' to decimal')[0];
+        const userAnswer = inputElement.value.trim();
+        const correctAnswer = parseInt(binaryNumber, 2);
 
-    // Convert the binary number to decimal for comparison
-    const decimalEquivalent = binaryToDecimal(randomBinary);
+        if (userAnswer === correctAnswer.toString()) {
+          resultElement.textContent = 'Correct!';
+          correctAnswers++;
+        } else {
+          resultElement.textContent = `Incorrect. The correct answer is ${correctAnswer}`;
+        }
 
-    // Check if the player's guess is correct
-    if (parseInt(playerGuess) === decimalEquivalent) {
-      alert(`Congratulations! You guessed it right. The decimal equivalent of ${randomBinary} is ${decimalEquivalent}.`);
-    } else {
-      alert(`Sorry, that's incorrect. The correct decimal equivalent of ${randomBinary} is ${decimalEquivalent}.`);
-    }
-    const playAgain = confirm("Do you want to play again?");
-    if (playAgain) {
-      playGame(); // Restart the game
-    } else {
-      alert("Thanks for playing! Goodbye.");
-    }
-  }
+        totalQuestions++;
+        updateScore(); // Display the current score
+        generateQuestion(); // Move to the next question
+      };
 
-  // Start the game
-  playGame();
-</script>
+      function updateScore() {
+        scoreElement.textContent = `${correctAnswers}/${totalQuestions}`;
+      }
 
+      generateQuestion(); // Initial question generation
+    });
+  </script>
 </body>
 </html>
-
