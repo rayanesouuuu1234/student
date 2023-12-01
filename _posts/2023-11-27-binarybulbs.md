@@ -7,7 +7,6 @@ description: Binary Bulbs program where 0s and 1s are represented by lightbulbs.
 type: hacks
 courses: { csse: {week: 1}, csp: {week: 1, categories: [4.A]}, csa: {week: 0} }
 ---
-<html lang="en">
 
 <head>
     <meta charset="UTF-8">
