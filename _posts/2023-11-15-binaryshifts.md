@@ -76,7 +76,12 @@ categories: [C4.1]
 </head>
 <body>
 
-    <!-- This is the main container for the form, styled with the 'form-container' class -->
+<div class="form-container">
+    <h2>Understanding Binary Shifting</h2>
+    <p>
+        Binary shifting is an operation where the bits of a number are moved to the left or right. In a left shift (<<), each bit is shifted one place to the left. In a right shift (>>), each bit is shifted one place to the right. The number of places to shift is specified by the user. This process is useful for data manipulation, and can perform quick multiplication or division by powers of two. In this demo, you can enter a number, choose a shift direction, and see the binary and decimal results of the shift operation.
+    </p>
+    
 <div class="form-container">
     <!-- Container for the first group of form elements -->
     <div class="form-group">
