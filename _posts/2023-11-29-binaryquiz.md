@@ -3,7 +3,7 @@ toc: true
 comments: true
 layout: 
 title: Binary Quiz
-description: Program that quizzes users on binary and keeps track of theit score.
+description: Program that quizzes users on binary and keeps track of their score.
 type: hacks
 courses: { csse: {week: 1}, csp: {week: 1, categories: [4.A]}, csa: {week: 0} }
 ---
@@ -98,7 +98,7 @@ courses: { csse: {week: 1}, csp: {week: 1, categories: [4.A]}, csa: {week: 0} }
         const binaryNumber = generateRandomBinary();
         questionElement.textContent = `Convert ${binaryNumber} to decimal`;
         inputElement.value = '';
-        resultElement.textContent = '';
+        // resultElement.textContent = '';
         updateScore(); // Display the current score
       }
 
