@@ -98,7 +98,7 @@ courses: { csse: {week: 1}, csp: {week: 1, categories: [4.A]}, csa: {week: 0} }
         const binaryNumber = generateRandomBinary();
         questionElement.textContent = `Convert ${binaryNumber} to decimal`;
         inputElement.value = '';
-        resultElement.textContent = '';
+        // resultElement.textContent = '';
         updateScore(); // Display the current score
       }
 
