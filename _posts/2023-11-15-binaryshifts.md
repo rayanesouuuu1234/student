@@ -2,7 +2,7 @@
 comments: true
 layout: notebook
 title: Binary Shifting Demo
-description: This demo shows how binary shifting works. Enter a number, choose a shift direction, and see the result in decimal and binary.
+description: This demo shows how binary shifting works. Enter a number, choose a shift direction, and see the result in decimal and binary!
 type: hacks
 courses: { compsci: {week: 0} }
 categories: [C4.1]
