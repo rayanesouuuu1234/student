@@ -8,7 +8,7 @@
             font-family: 'Courier New', Courier, monospace;
             text-align: center;
             margin: 20px;
-            background: url('https://cf.geekdo-images.com/fv4bK3hKcaHneY-e7SRNjA__opengraph/img/ymistn_5KhQNb1PuDssJ2jOr208=/0x6:609x339/fit-in/1200x630/filters:fill(blur):strip_icc()/pic6367073.jpg') center center fixed;
+            background: url('') center center fixed;
             background-size: cover;
             padding-top: 70px; /* Adjusted padding for the top bar */
         }
@@ -89,10 +89,10 @@
 </head>
 <body>
 <div id="legend">
-    <div class="legend-item" style="background-color: #ADD8E6;">+/- 2</div>
-    <div class="legend-item" style="background-color: #90EE90;">+/- 4</div>
-    <div class="legend-item" style="background-color: #FFA500;">+/- 6</div>
-    <div class="legend-item" style="background-color: #FF0000;">+/- 8</div>
+    <div class="legend-item" style="background-color: #ADD8E6;"></div>
+    <div class="legend-item" style="background-color: #90EE90;"></div>
+    <div class="legend-item" style="background-color: #FFA500;"></div>
+    <div class="legend-item" style="background-color: #FF0000;"></div>
 </div>
 <div id="loadingScreen">
     <p>Loading...</p>
