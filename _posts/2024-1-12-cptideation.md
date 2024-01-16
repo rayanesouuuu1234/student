@@ -22,3 +22,7 @@ courses: { csse: {week: 1}, csp: {week: 1, categories: [4.A]}, csa: {week: 0} }
 - Ethan: Work on the frontend in this project, I will focus on the coding part and how the website will interact with the user. I will also try and help with the styling of the website.
 
 ### Theme/Style
+- Adventurous theme by using tropical colors
+- Background will consist of images of diverse landscapes and iconic landmarks
+- Clean and minimalist layout to keep focus on travel content.
+- Card-based design for displaying the travel locations
