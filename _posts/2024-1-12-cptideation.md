@@ -15,9 +15,9 @@ courses: { csse: {week: 1}, csp: {week: 1, categories: [4.A]}, csa: {week: 0} }
 -with the press of a search button, the planner gives a few potential locations, in order of how close/far it is from their location, with the 1st spot being the most desirable for their search
 
 ### Roles for Everyone
-- Anthony
-- Rayanne
-- Aiden: Work on front end and create code for users to input their preferred distance, weather, and budget.
+- Anthony: Add data to backend about each of the travel locations, such as images or unique information to each spot. also work on connecting backend and frontend and bringing the data of a specific spot that is assigned to user, into frontend
+- Rayanne: During this project, I will be working on the front end. Specifically, I will be in charge of styling the website. I plan to find a theme from a third party website and implement it into vscode. I will also be participating in the user input code as well to have a functioning website.
+- Aiden: Work on front end and create code that takes user input such as the users preferred distance, budget, and weather and once they enter the code, it will tell them a location that meets their criteria.
 - Chris
 - Ethan
 
