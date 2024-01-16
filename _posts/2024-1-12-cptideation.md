@@ -17,7 +17,7 @@ courses: { csse: {week: 1}, csp: {week: 1, categories: [4.A]}, csa: {week: 0} }
 ### Roles for Everyone
 - Anthony
 - Rayanne
-- Aiden
+- Aiden: Work on front end and create code for users to input their preferred distance, weather, and budget.
 - Chris
 - Ethan
 
