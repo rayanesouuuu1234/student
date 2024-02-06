@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -113,25 +113,6 @@
 </div>
 
 <script>
-    document.getElementById('loginForm').addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent default form submission
-
-        // Implement login functionality here
-
-        alert('Login successful! Redirecting...');
-        window.location.href = 'game.html';
-        // Redirect to another page on success
-    });
-
-    document.getElementById('goToSignup').addEventListener('click', function() {
-        window.location.href = 'signup.html'; // Replace 'signup.html' with your signup page URL
-    });
-</script>
-
-</body>
-</html>
-
-<script>
 document.getElementById('loginForm').addEventListener('submit', function(e) {
     e.preventDefault(); // Prevent default form submission
 
@@ -162,7 +143,17 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     .catch(error => {
         // Handle login errors here
         console.error('There was a problem with the login operation:', error);
-        alert('Error logging in: ' + error.message);
+        alert('Failed to log in: ' + error.message);
+        // Clear input fields if login fails
+        document.getElementById('loginUsername').value = '';
+        document.getElementById('loginPassword').value = '';
     });
 });
+
+document.getElementById('goToSignup').addEventListener('click', function() {
+    window.location.href = 'signup.html'; // Replace 'signup.html' with your signup page URL
+});
 </script>
+
+</body>
+</html>
