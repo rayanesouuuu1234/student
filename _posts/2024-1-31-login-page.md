@@ -129,7 +129,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
         password: document.getElementById('loginPassword').value,
     };
 
-    fetch('http://127.0.0.1:8086/api/users/authenticate', { // Adjust the endpoint if necessary
+    fetch('http://127.0.0.1:8086/api/users/authenticate', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
