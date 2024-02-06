@@ -1,4 +1,12 @@
-
+---
+toc: true
+comments: true
+layout: 
+title: login page
+description:
+type: hacks
+courses: { csse: {week: 1}, csp: {week: 1, categories: [4.A]}, csa: {week: 0} }
+---
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,7 +23,6 @@
             background: #000; /* Changed to black */
             color: #fff; /* Adjusted for contrast */
         }
-
         .form-container {
             background: #222; /* Darker background for the form */
             padding: 20px 40px; /* Adjusted padding for sleekness */
@@ -23,13 +30,11 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Subtle shadow */
             text-align: center;
         }
-
         h2 {
             margin-bottom: 20px; /* Adjusted spacing */
             color: #fff; /* Brighter text for readability */
             font-size: 24px; /* Smaller for sleekness */
         }
-
         label {
             display: block;
             text-align: left;
@@ -37,7 +42,6 @@
             color: #bbb; /* Lighter text color for visibility */
             font-size: 14px;
         }
-
         input[type="text"],
         input[type="password"] {
             width: 100%;
@@ -50,13 +54,11 @@
             box-sizing: border-box;
             transition: border-color 0.3s;
         }
-
         input[type="text"]:focus,
         input[type="password"]:focus {
             border-color: #555; /* Focus color */
             box-shadow: none; /* Removed for sleekness */
         }
-
         button {
             width: 100%;
             padding: 10px 0; /* Adjusted padding */
@@ -68,35 +70,29 @@
             cursor: pointer;
             transition: background 0.3s;
         }
-
         button:hover {
             background: #444; /* Hover effect */
         }
-
         .register-btn {
             background: #444; /* Differentiated register button */
             margin-top: 8px; /* Adjusted spacing */
         }
-
         .form-footer {
             margin-top: 15px; /* Adjusted spacing */
             font-size: 14px;
             color: #aaa; /* Lighter for visibility */
         }
-
         .form-footer a {
             color: #999; /* Subtle link color */
             text-decoration: none;
             transition: color 0.3s;
         }
-
         .form-footer a:hover {
             color: #bbb; /* Hover effect */
         }
     </style>
 </head>
 <body>
-
 <div class="form-container">
     <form id="loginForm">
         <h2>Welcome Back!</h2>
@@ -111,35 +107,61 @@
         </div>
     </form>
 </div>
-
-<script>
-    document.getElementById('loginForm').addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent default form submission
-
-        // Implement login functionality here
-
-        alert('Login successful! Redirecting...');
-        window.location.href = 'game.html';
-        // Redirect to another page on success
-    });
-
-    document.getElementById('goToSignup').addEventListener('click', function() {
-        window.location.href = 'signup.html'; // Replace 'signup.html' with your signup page URL
-    });
-</script>
-
-</body>
-</html>
-
 <script>
 document.getElementById('loginForm').addEventListener('submit', function(e) {
     e.preventDefault(); // Prevent default form submission
-
+    const username = document.getElementById('loginUsername').value;
+    const password = document.getElementById('loginPassword').value;
+    // Check if the username and password match the hardcoded credentials
+    if (username === "toby" && password === "123toby") {
+        alert('Login successful! Redirecting...');
+        window.location.href = 'game.html'; // Redirect to another page on success
+    } else {
+        // If the credentials don't match, display an error message
+        alert('Error logging in: Invalid username or password.');
+    }
+});
+</script>
+</body>
+</html>
+<script>
+// Handle the signup form submission
+document.getElementById('signupForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent default form submission
+    const signupData = {
+        uid: document.getElementById('username').value,
+        password: document.getElementById('password').value,
+        // dob: document.getElementById('dob').value, // Uncomment and add a dob input if needed
+    };
+    fetch('http://127.0.0.1:8086/api/users', { // Adjust the endpoint if necessary
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(signupData),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.text();
+    })
+    .then(data => {
+        console.log(data);
+        alert('Account created successfully!');
+    })
+    .catch(error => {
+        console.error('There was a problem with your fetch operation:', error);
+        alert('Error creating account: ' + error.message);
+    });
+});
+// Handle the login form submission
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent default form submission
     const loginData = {
         uid: document.getElementById('loginUsername').value,
         password: document.getElementById('loginPassword').value,
     };
-
     fetch('http://127.0.0.1:8086/api/users/authenticate', { // Adjust the endpoint if necessary
         method: 'POST',
         headers: {
@@ -151,16 +173,13 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
         if (!response.ok) {
             throw new Error('Login failed: ' + response.statusText);
         }
-        return response.json(); // Assuming the server responds with JSON
+        return response.text();
     })
     .then(data => {
-        // Handle successful login here
-        console.log(data); // You might want to use the data for something
-        alert('Login successful! Redirecting...');
-        window.location.href = 'game.html'; // Redirect to another page on success
+        console.log(data);
+        alert('Login successful!');
     })
     .catch(error => {
-        // Handle login errors here
         console.error('There was a problem with the login operation:', error);
         alert('Error logging in: ' + error.message);
     });
