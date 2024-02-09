@@ -68,7 +68,7 @@
     </p>
     <p>
      <button class="button-spacing">Log In</button>
-          <button onClick = "window.location.href ='SIGN UP PAGE LINK'" class="button-spacing" >Sign Up</button>
+          <button onClick = "window.location.href ='https://github.com/rayanesouuuu1234/tri2.git'" class="button-spacing" >Sign Up</button>
     </p>
   </form>
   <!-- Your JavaScript code -->
