@@ -1,3 +1,12 @@
+---
+toc: true
+comments: true
+layout: 
+title: List of Flags
+description:
+type: hacks
+courses: { csse: {week: 1}, csp: {week: 1, categories: [4.A]}, csa: {week: 0} }
+---
 <html lang="en">
 <head>
     <meta charset="UTF-8">
