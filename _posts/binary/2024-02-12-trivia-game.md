@@ -1,90 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trivia Game</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-        }
+# Trivia Game
 
-        #question {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-        }
+Welcome to the Trivia Game! Test your knowledge with these questions.
 
-        #options {
-            display: flex;
-            justify-content: center;
-        }
+## Instructions
 
-        button {
-            font-size: 1em;
-            margin: 10px;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <h1>Trivia Game</h1>
-    <div id="question"></div>
-    <div id="options"></div>
-    
-    <script>
-        // Function to fetch trivia questions from the Open Trivia Database API
-        async function fetchTriviaQuestions() {
-            const response = await fetch('https://opentdb.com/api.php?amount=1&type=multiple');
-            const data = await response.json();
-            return data.results[0];
-        }
+1. Answer each question to the best of your ability.
+2. Each correct answer earns you a point.
+3. Have fun!
 
-        // Function to display the question and answer options
-        function displayQuestion(question) {
-            const questionElement = document.getElementById('question');
-            const optionsElement = document.getElementById('options');
-            
-            questionElement.textContent = question.question;
+---
 
-            // Combine incorrect and correct answer options
-            const allOptions = question.incorrect_answers.concat(question.correct_answer);
+## Questions
 
-            // Shuffle the options
-            const shuffledOptions = allOptions.sort(() => Math.random() - 0.5);
+<!-- Questions will be dynamically populated from the API -->
 
-            // Display options as buttons
-            optionsElement.innerHTML = '';
-            shuffledOptions.forEach(option => {
-                const button = document.createElement('button');
-                button.textContent = option;
-                button.addEventListener('click', () => checkAnswer(option, question.correct_answer));
-                optionsElement.appendChild(button);
-            });
-        }
+<!-- API Endpoint: https://opentdb.com/api.php?amount=5&type=multiple -->
 
-        // Function to check the selected answer
-        function checkAnswer(selectedAnswer, correctAnswer) {
-            if (selectedAnswer === correctAnswer) {
-                alert('Correct!');
-            } else {
-                alert(`Wrong! The correct answer is: ${correctAnswer}`);
-            }
+<!-- Placeholder for questions -->
+<!-- Question 1 -->
+<details>
+  <summary>Question 1</summary>
+  <p id="question1"></p>
+  <details>
+    <summary>Options</summary>
+    <ul id="options1"></ul>
+  </details>
+  <p id="answer1"></p>
+</details>
 
-            // Fetch a new question after answering
-            fetchNewQuestion();
-        }
+<!-- Question 2 -->
+<details>
+  <summary>Question 2</summary>
+  <p id="question2"></p>
+  <details>
+    <summary>Options</summary>
+    <ul id="options2"></ul>
+  </details>
+  <p id="answer2"></p>
+</details>
 
-        // Function to fetch a new question and display it
-        async function fetchNewQuestion() {
-            const question = await fetchTriviaQuestions();
-            displayQuestion(question);
-        }
+<!-- Question 3 -->
+<details>
+  <summary>Question 3</summary>
+  <p id="question3"></p>
+  <details>
+    <summary>Options</summary>
+    <ul id="options3"></ul>
+  </details>
+  <p id="answer3"></p>
+</details>
 
-        // Initial setup - fetch and display the first question
-        fetchNewQuestion();
-    </script>
-</body>
-</html>
+<!-- Question 4 -->
+<details>
+  <summary>Question 4</summary>
+  <p id="question4"></p>
+  <details>
+    <summary>Options</summary>
+    <ul id="options4"></ul>
+  </details>
+  <p id="answer4"></p>
+</details>
+
+<!-- Question 5 -->
+<details>
+  <summary>Question 5</summary>
+  <p id="question5"></p>
+  <details>
+    <summary>Options</summary>
+    <ul id="options5"></ul>
+  </details>
+  <p id="answer5"></p>
+</details>
+
+---
+
+## Your Score: 0
+
+<!-- JavaScript code to fetch and populate questions from the API -->
+<script>
+  async function fetchTriviaQuestions() {
+    const response = await fetch('https://opentdb.com/api.php?amount=5&type=multiple');
+    const data = await response.json();
+
+    const questions = data.results;
+    for (let i = 0; i < questions.length; i++) {
+      const questionElement = document.getElementById(`question${i + 1}`);
+      const optionsElement = document.getElementById(`options${i + 1}`);
+      const answerElement = document.getElementById(`answer${i + 1}`);
+
+      questionElement.textContent = questions[i].question;
+      
+      // Randomly shuffle answer options
+      const options = [...questions[i].incorrect_answers, questions[i].correct_answer];
+      options.sort(() => Math.random() - 0.5);
+
+      options.forEach((option, index) => {
+        const li = document.createElement('li');
+        li.textContent = option;
+        li.addEventListener('click', () => checkAnswer(option, questions[i].correct_answer, answerElement));
+        optionsElement.appendChild(li);
+      });
+    }
+  }
+
+  function checkAnswer(selectedAnswer, correctAnswer, answerElement) {
+    if (selectedAnswer === correctAnswer) {
+      answerElement.textContent = 'Correct! 🎉';
+      updateScore(1);
+    } else {
+      answerElement.textContent = 'Incorrect. 😔';
+    }
+  }
+
+  function updateScore(points) {
+    const scoreElement = document.getElementById('score');
+    const currentScore = parseInt(scoreElement.textContent);
+    scoreElement.textContent = currentScore + points;
+  }
+
+  // Fetch questions when the page loads
+  fetchTriviaQuestions();
+</script>
