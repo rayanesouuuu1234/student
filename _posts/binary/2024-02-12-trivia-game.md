@@ -14,7 +14,7 @@ Welcome to the Trivia Game! Test your knowledge with these questions.
 
 <!-- Questions will be dynamically populated from the API -->
 
-<!-- API Endpoint: https://opentdb.com/api.php?amount=5&type=multiple -->
+<!-- API Endpoint: https://opentdb.com/api.php?amount=10&category=22&difficulty=easy&type=multiple -->
 
 <!-- Placeholder for questions -->
 <!-- Question 1 -->
@@ -79,7 +79,7 @@ Welcome to the Trivia Game! Test your knowledge with these questions.
 <!-- JavaScript code to fetch and populate questions from the API -->
 <script>
   async function fetchTriviaQuestions() {
-    const response = await fetch('https://opentdb.com/api.php?amount=5&type=multiple');
+    const response = await fetch('https://opentdb.com/api.php?amount=10&category=22&difficulty=easy&type=multiple');
     const data = await response.json();
 
     const questions = data.results;
