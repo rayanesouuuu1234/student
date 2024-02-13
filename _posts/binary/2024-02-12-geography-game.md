@@ -1,6 +1,6 @@
-# Trivia Game
+# Geography Trivia
 
-Welcome to the Trivia Game! Test your knowledge with these questions.
+Welcome to the geography Game! Test your knowledge with these questions.
 
 ## Instructions
 
