@@ -54,7 +54,7 @@
 
       try {
         const response = await fetch("http://127.0.0.1:8086/api/users/authenticate", requestOptions);
-        console.log("Response received:", response); 
+        console.log("Response received:", response);  
 
         if (response.ok) {
           console.log("User logged in successfully");
