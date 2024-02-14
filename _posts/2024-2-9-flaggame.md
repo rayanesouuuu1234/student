@@ -102,9 +102,9 @@ courses: { csse: {week: 1}, csp: {week: 1, categories: [4.A]}, csa: {week: 0} }
     <div class="homepage">
         <h1>Welcome to the Flag Guessing Quiz</h1>
         <a href="#" class="button" onclick="startGame()">Play Game</a>
-        <a href="http://127.0.0.1:4000/tri2/2024/02/09/flaglist.html" class="button">List of Flags</a>
+        <a href="https://rayanesouuuu1234.github.io/tri2/2024/02/09/flaglist.html" class="button">List of Flags</a>
     </div>
-
+    
     <div id="quiz-container" style="display: none;">
         <h1>Flag Guessing Quiz</h1>
         <div id="question"></div>
@@ -122,7 +122,6 @@ courses: { csse: {week: 1}, csp: {week: 1, categories: [4.A]}, csa: {week: 0} }
             <button id="play-again-button" onclick="resetQuiz()">Play Again</button>
         </div>
     </div>
-
     <script>
         let currentQuestionIndex = 0;
         let score = 0;
