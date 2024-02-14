@@ -18,7 +18,7 @@
     </p>
     <p>
       <button type="button" class="button-spacing" onclick="login_user()">Log In</button>
-    <button onclick="window.location.href='https:/rayanesouuuu1234.github.io/tri2/2024/01/31/signup.html'" class="button-spacing">Sign Up</button>
+    <button onclick="window.location.href='https:/rayanesouuuu1234.github.io/tri2/2024/02/12/signup.html'" class="button-spacing">Sign Up</button>
 
     </p>
   </form>
