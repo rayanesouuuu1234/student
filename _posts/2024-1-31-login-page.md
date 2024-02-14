@@ -18,7 +18,8 @@
     </p>
     <p>
       <button type="button" class="button-spacing" onclick="login_user()">Log In</button>
-      <button onclick="window.location.href='https://rayanesouuuu1234.github.io/tri2/2024/01/31/signup.html'" class="button-spacing">Sign Up</button>
+    <button onclick="window.location.href='https:/rayanesouuuu1234.github.io/tri2/2024/01/31/signup.html'" class="button-spacing">Sign Up</button>
+
     </p>
   </form>
 
@@ -54,12 +55,12 @@
 
       try {
         const response = await fetch("http://127.0.0.1:8086/api/users/authenticate", requestOptions);
-        console.log("Response received:", response);  
+        console.log("Response received:", response); 
 
         if (response.ok) {
           console.log("User logged in successfully");
           alert("Login Successful!!");
-          window.location.href = "http://127.0.0.1:4000/tri2/2024/01/31/game.html";
+          window.location.href = "https://rayanesouuuu1234.github.io/cpt_frontend/2024/02/12/Home-Page.html";
         } else {
           console.error("User login failed");
           alert("Login Unsuccessful");
