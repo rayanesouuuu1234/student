@@ -3,15 +3,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Flag Memory Game</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
   body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
     background-color: #f7f7f7;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
   }
   .grid {
     display: grid;
@@ -26,6 +30,7 @@
     transition: transform 0.6s;
     transform-style: preserve-3d;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   }
   .card.flip {
     transform: rotateY(180deg);
@@ -44,22 +49,29 @@
   .card-front {
     background-color: #1e88e5;
     color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   }
   .card-back {
     background-color: #f0f0f0;
     transform: rotateY(180deg);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   }
   .info {
     display: flex;
     justify-content: space-around;
     width: 100%;
     max-width: 650px;
+    margin-top: 20px;
   }
   .timer, .score {
     font-size: 1.5rem;
+    background: #e1e1e1;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
   .difficulty-buttons {
-    margin-bottom: 20px;
+    margin: 20px 0;
   }
   button {
     padding: 10px 20px;
@@ -70,10 +82,16 @@
     border-radius: 5px;
     background-color: #4CAF50;
     color: white;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
   button:hover {
     background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  button:focus {
+    outline: none;
   }
 </style>
 </head>

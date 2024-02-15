@@ -70,7 +70,7 @@
   <h1>Geography Trivia</h1>
 
   <div id="instructions">
-    <p>How Good is Your Geography?</p>
+    <p>Put Your Geography Knowledge to The Test!</p>
   </div>
 
   <div id="questions-container"></div>
