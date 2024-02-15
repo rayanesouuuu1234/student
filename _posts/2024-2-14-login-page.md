@@ -116,6 +116,8 @@
         if (response.ok) {
           console.log("User logged in successfully");
           alert("Login Successful!!");
+          // Set user ID in local storage
+          localStorage.setItem('userId', uid);
           window.location.href = "https://rayanesouuuu1234.github.io/cpt_frontend/2024/02/12/Home-Page.html";
         } else {
           console.error("User login failed");
