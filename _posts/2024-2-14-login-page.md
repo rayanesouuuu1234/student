@@ -3,7 +3,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Page</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f8ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    form {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+    form:hover {
+      transform: scale(1.02);
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0 20px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease-in-out;
+    }
+    input[type="text"]:focus, input[type="password"]:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .button-spacing {
+      margin-right: 10px;
+    }
+    #errorMessage {
+      color: red;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <div id="errorMessage"></div>
@@ -18,8 +75,7 @@
     </p>
     <p>
       <button type="button" class="button-spacing" onclick="login_user()">Log In</button>
-    <button onclick="window.location.href='https:/rayanesouuuu1234.github.io/tri2/2024/02/12/signup.html'" class="button-spacing">Sign Up</button>
-
+      <button type="button" onclick="window.location.href='https:/rayanesouuuu1234.github.io/tri2/2024/02/12/signup.html'" class="button-spacing">Sign Up</button>
     </p>
   </form>
 
