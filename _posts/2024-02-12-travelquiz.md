@@ -72,23 +72,33 @@
 const questions = [
   {
     text: "What type of climate do you prefer?",
-    options: ["Sunny and Mediterranean", "Cool and Nordic", "Warm and Tropical", "Crisp and Alpine"],
-    values: ["Italy", "Iceland", "Thailand", "Switzerland"]
+    options: ["Sunny and Mediterranean", "Mild and temperate", "Hot and sunny"],
+    values: ["City", "National Park", "Tropical"]
   },
   {
     text: "What activity sounds most appealing to you?",
-    options: ["Exploring ancient ruins", "Chasing Northern Lights", "Relaxing on beautiful beaches", "Skiing in the mountains"],
-    values: ["Italy", "Iceland", "Thailand", "Switzerland"]
+    options: ["Sightseeing and shopping", "Hiking and outdoor adventures", "Relaxing on the beach"],
+    values: ["City", "National Park", "Tropical"]
   },
   {
-    text: "What type of cuisine are you most interested in trying?",
-    options: ["Pasta, Pizza, Gelato", "Fresh seafood", "Spicy Thai dishes", "Swiss chocolate and cheese"],
-    values: ["Italy", "Iceland", "Thailand", "Switzerland"]
+    text: "What type of landscape do you find most appealing?",
+    options: ["Skyscrapers and urban scenery", "Mountains and forests", "Palm trees and beaches"],
+    values: ["City", "National Park", "Tropical"]
   },
   {
-    text: "What scenery would you like to wake up to?",
-    options: ["Views of rolling hills and vineyards", "Vast landscapes with glaciers", "Palm trees and turquoise waters", "Snow-capped mountains and pristine lakes"],
-    values: ["Italy", "Iceland", "Thailand", "Switzerland"]
+    text: "How do you like to spend your evenings?",
+    options: ["Exploring nightlife and dining out", "Stargazing and bonfires", "Watching the sunset by the ocean"],
+    values: ["City", "National Park", "Tropical"]
+  },
+  {
+    text: "What kind of cuisine are you most interested in trying?",
+    options: ["International cuisine and gourmet dining", "Local specialties cooked over a campfire", "Fresh seafood and exotic fruits"],
+    values: ["City", "National Park", "Tropical"]
+  },
+  {
+    text: "What is your preferred mode of transportation?",
+    options: ["Public transportation and taxis", "Hiking or biking", "Relaxing in a hammock or on a boat"],
+    values: ["City", "National Park", "Tropical"]
   }
 ];
 
@@ -120,7 +130,7 @@ function showQuestion(index) {
 }
 
 function calculateDestination() {
-  const destinationScores = { "Italy": 0, "Iceland": 0, "Thailand": 0, "Switzerland": 0 };
+  const destinationScores = { "City": 0, "National Park": 0, "Tropical": 0};
   Object.values(answers).forEach(answer => {
     destinationScores[answer] += 1;
   });
