@@ -2,8 +2,7 @@ This project is a travel tracker called that helps students choose travel destin
 
 Students can create accounts and login with the same account credentials. This is done in order to allow independent tracking of college applications, creating a highly personalized experience. The creation of the account is done using a POST method in the API endpoint /api/users. These credentials are stored in the backend in an SQLite database, and are fetched using the GET method under the same endpoint.
 
-Upon logging in, the student is redirected to the MyScout page. Here, the student can add their initial colleges to the list. They can always add further colleges to their list in the future. Both of these features work using a PUT method under the API endpint /api/users/edit. There is also a college delete feature, where the user can delete specific colleges from the list. This is done using a DELETE method under the edit endpoint.
+Upon logging in, the student is redirected to the Travel home page. These features work using a PUT method under the API endpint /api/users/. 
 
-IMPORTANT: The colleges are saved as a list, and are fetched using this code line: json.loads(user.college_list). This list is saved in the SQLite database, and is unique to each user. The third screenshot in the Personal Project Reference includes this code. While the college list might not be visible due to being stored in an SQLite database, it is being fetched in the backend and frontend nonetheless. An image of the SQLite database will be included later in the document.
+IMPORTANT: The travel elements are saved as a list, and are fetched using this code line: json.loads(user.travel_list). This list is saved in the SQLite database, and is unique to each user.
 
-This project includes a machine learning feature that uses a linear regression model to predict the student's admission decision based on user-entered data such as their SAT score, GPA, and the number of extracurriculars. The dataset used is representative of the most competitive American universities, and is stored in a .csv file in the backend.
